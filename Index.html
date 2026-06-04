@@ -1,0 +1,276 @@
+<html>
+
+<head>
+	<title>ITI STUDENT REGISTRATION </title>
+
+<style>
+
+body {
+
+	font-family:Arial;
+	Background:#eef2f3
+}
+
+.container {
+
+	width:1000px;
+	background:Skyblue;
+	padding:20px;
+	margin:auto;
+	margin-top:20px;
+	border-radius:10px;
+}
+
+label {
+
+		color:blue;
+}
+h1 {
+
+	text-align:center;
+	color:red;
+}
+
+h2 {
+	color:purple;
+}
+
+input,select,textarea {
+	
+	width:500px;
+	padding:8px;
+	margin:5px 0;
+
+}
+
+
+button {
+
+	width:100px;
+	padding:10px;
+	background:green;
+	color:white;
+	border:none;
+	cursor:pointer;
+
+}
+
+button.hover {
+
+	text-align:center;
+	font-weight:bold;
+
+}
+
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1><u>ITI STUDENT REGISTRATION FORM </u></h1>
+
+<form onsubmit="saveData(); return false;">
+
+<!-----Personal information---->
+
+<h2>Personal Information :-</h2>
+<label><b>Student Name :</b></label>
+<input type="text" id="name" placeholder="Enter your full Name">
+<p></p>
+
+<label><b>Father Name :</b></label>
+<input type="text" id="father" placeholder="Enter your Father Name">
+<p></p>
+
+<label><b>Mother Name :</b></label>
+<input type="text" id="mother" placeholder="Enter your Mother Name">
+<p></p>
+
+<label><b>Date of Birth :</b></label>
+<input type="date" id="dob" placeholder="Enter your Date of Birth">
+<p></p>
+
+<label><b>Email-id :</b></label>
+<input type="email" id="email" placeholder="Enter your Email id">
+<p></p>
+
+<label><b>Mobile Number :</b></label>
+<input type="text" id="mobile" placeholder="Enter your Mobile number" maxlength="10">
+<p></p>
+
+<label><b>Address :</b></label>
+<textarea cols="5"rows="5" id="address" placeholder="Enter your Address"></textarea>
+<p></p>
+
+
+<label><b>Pincode :</b></label>
+<input type="text" id="pincode" placeholder="Enter your pincode" maxlength="6" >
+<p></p>
+
+
+<label><b>Category :</b></label><br>
+<select id="category">
+<option>Select your Category</option>
+<option>ST</option>
+<option>OBC</option>
+<option>SC</option>
+<option>GEN</option>
+</select>
+
+<p></p>
+
+<label><b>Gender :</b></label><br>
+<select id="gender">
+	<option>Select your Gender</option>
+	<option>MALE</option>
+	<option>FEMALE</option>
+	<option>OTHER</option>
+	
+</select>
+<p></p>
+
+
+<!----Qualification details---->
+<h2>Qualification Information :-</h2>
+
+<label><b>10th Percentage :</b></label>
+<input type="number" id="tenth" placeholder="Enter your 10th percentage">
+<p></p>
+
+<label><b>12th Percentage :</b></label>
+<input type="number" id="twelfth" placeholder="Enter your 12th percentage">
+<p></p>
+
+
+<!----ITI details---->
+<h2>ITI Information :-</h2>
+
+<label><b>Admission date :</b></label>
+
+<input type="date" id="admission" placeholder="Enter your Admission date">
+<p></p>
+
+<label><b>Institute Name :</b></label>
+
+<select id="institute">
+	<option> Select Your Institute Name</option>
+	<option>GOVT. ITI HATHBANDH</option>
+	<option>GOVT. ITI BHTAPARA</option>
+	<option>GOVT. ITI TILDA-NEORA</option>
+	<option>GOVT. ITI BILHA</option>
+	<option>GOVT. ITI BALODABAZAR</option>
+	
+</select>
+<p></p>
+
+<label><b>Trade Name :</b></label>
+
+<select id="trade">
+	<option>Select Your Trade Name</option>
+	<option>ELECTRICIAN</option>
+	<option>FITTER</option>
+	<option>MECHANIC MOTOR VEHICLE</option>
+	<option>ELECTRONICS MACHANIC</option>
+	<option>COMPUTER OPRERATORS AND PROGRAMMING ASSISTANT</option>
+	<option>WELDER</option>
+	<option>CUTTING & SEWING/DRESS MAKING</option>
+	<option>BEAUTY & WELNESS</option>
+	<option>CATERING & HOSPITALITY</option>
+	<option>STENOGRAPHY</option>
+
+
+
+</select>
+
+
+<center>
+<button onclick="submit">Submit</button>
+<button type="button" onclick="resetForm()">Reset</button>
+</center>
+
+
+<h4 align="right">~ Presented by Bhisham Dhruw</h4>
+
+</form>
+
+<script>
+
+function saveData() {
+
+	
+
+if (
+	document.getElementById("name").value==""||
+	document.getElementById("father").value==""||
+	document.getElementById("mother").value==""||
+	document.getElementById("dob").value==""||
+	document.getElementById("email").value==""||
+	document.getElementById("mobile").value==""||
+	document.getElementById("address").value==""||
+	document.getElementById("pincode").value==""||
+	document.getElementById("category").value==""||
+	document.getElementById("gender").value==""||
+
+	document.getElementById("tenth").value==""||
+	document.getElementById("twelfth").value==""||
+
+	document.getElementById("admission").value==""||
+	document.getElementById("institute").value==""||
+	document.getElementById("trade").value==""
+
+)
+
+{
+	alert("Please fill the Registration Form");
+
+	return;
+}
+
+    //Save data in localStorage
+
+    localStorage.setItem("name",document.getElementById("name").value);
+    localStorage.setItem("father",document.getElementById("father").value);
+    localStorage.setItem("mother",document.getElementById("mother").value);
+    localStorage.setItem("dob",document.getElementById("dob").value);
+    localStorage.setItem("email",document.getElementById("email").value);
+    localStorage.setItem("mobile",document.getElementById("mobile").value);
+    localStorage.setItem("address",document.getElementById("address").value);
+    localStorage.setItem("pincode",document.getElementById("pincode").value);
+    localStorage.setItem("category",document.getElementById("category").value);
+    localStorage.setItem("gender",document.getElementById("gender").value);
+
+    localStorage.setItem("tenth",document.getElementById("tenth").value);
+    localStorage.setItem("twelfth",document.getElementById("twelfth").value);
+
+    localStorage.setItem("admission",document.getElementById("admission").value);
+    localStorage.setItem("institute",document.getElementById("institute").value);
+    localStorage.setItem("trade",document.getElementById("trade").value);
+
+   alert("Form successfully Submitted");
+
+    // Open next page
+
+    window.location.href="Result.html";
+
+}
+
+
+function resetForm()
+
+{
+	
+	alert("Form Reset Successfully")
+
+ document.forms[0].reset();
+
+}
+
+
+</script>
+</Form>
+</body>
+</html>
